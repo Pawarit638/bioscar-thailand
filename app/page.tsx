@@ -1,3 +1,5 @@
+import Mascot from "./Mascot";
+
 /*
   ข้อมูลติดต่อ — แก้ตรงนี้ที่เดียว แล้วปุ่มทุกปุ่มในหน้าจะเปลี่ยนตาม
   ⚠️ LINE_ID และ HOURS ยังเป็นข้อความตัวอย่าง กรุณาเปลี่ยนเป็นของจริง
@@ -112,7 +114,7 @@ function FeatureIcon({ name }: { name: (typeof features)[number]["icon"] }) {
 
 function SerumArt() {
   return (
-    <svg viewBox="0 0 360 400" role="img" aria-label="ภาพประกอบขวดเซรั่ม Bioscar" className="h-auto w-full max-w-[22rem] md:max-w-[26rem]">
+    <svg viewBox="0 0 360 400" role="img" aria-label="ภาพประกอบขวดเซรั่ม Bioscar" className="h-auto w-full">
       <defs>
         <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
           <stop offset="0" stopColor="#ffffff" />
@@ -245,7 +247,15 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center md:justify-end">
-              <SerumArt />
+              <div className="relative w-full max-w-[22rem] md:max-w-[26rem]">
+                <SerumArt />
+                <div className="absolute -bottom-2 -left-1 w-28 sm:w-32 md:-left-6 md:w-40">
+                  <span className="mascot-bubble absolute -top-12 left-16 whitespace-nowrap rounded-2xl rounded-bl-sm bg-white px-3 py-1.5 text-small font-semibold text-brand shadow-md sm:left-20 md:-top-12 md:left-28">
+                    สวัสดีค่า~ ทักมาคุยได้นะ
+                  </span>
+                  <Mascot className="h-auto w-full" />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -348,6 +358,7 @@ export default function Home() {
               <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-brand/50 blur-3xl" />
               <div className="relative grid gap-10 md:grid-cols-2 md:items-center">
                 <div>
+                  <Mascot className="mb-2 h-auto w-20 md:w-24" />
                   <h2 className="text-h2 font-bold">ปรึกษาเรื่องรอยได้เลย</h2>
                   <p className="mt-3 text-lead text-white/80">
                     ส่งรูปรอยที่อยากดูแลมาทางไลน์ แอดมินพร้อมให้คำแนะนำแบบเป็นกันเอง
