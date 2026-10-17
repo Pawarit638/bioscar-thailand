@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/*
+  สีและขนาดตัวอักษรของทั้งเว็บ — แก้ที่นี่ที่เดียว
+  ธีม: การแพทย์ยุคใหม่ (ฟ้าอมเขียว สะอาด) + สมุนไพรธรรมชาติ (เขียวใบไม้) + ความอบอุ่น (ครีม/พีช)
+*/
+@theme {
+  /* สีหลัก */
+  --color-ink: #0e3b40;        /* ตัวหนังสือเข้ม */
+  --color-muted: #4f6b6e;      /* ตัวหนังสือรอง */
+  --color-brand: #0f7c7f;      /* ฟ้าอมเขียว (การแพทย์) */
+  --color-brand-dark: #0a5a5d;
+  --color-brand-soft: #dff1ee; /* พื้นฟ้าอมเขียวอ่อน */
+  --color-herb: #4f8a4b;       /* เขียวสมุนไพร */
+  --color-herb-soft: #e8f2e3;
+  --color-warm: #f3b48a;       /* พีชอบอุ่น */
+  --color-warm-soft: #fdf0e6;
+  --color-cream: #fbf8f3;      /* พื้นหลังหลัก */
+  --color-line: #06c755;       /* สีปุ่ม LINE */
+  --color-line-dark: #05a647;
+  --color-border: #d9e6e3;
+
+  /* ฟอนต์ */
+  --font-sans: var(--font-thai), ui-sans-serif, system-ui, sans-serif;
+
+  /* ขนาดตัวอักษร */
+  --text-display: clamp(2.25rem, 1.6rem + 3.2vw, 4rem);
+  --text-display--line-height: 1.2;
+  --text-h2: clamp(1.625rem, 1.3rem + 1.6vw, 2.5rem);
+  --text-h2--line-height: 1.3;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.45;
+  --text-lead: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  --text-lead--line-height: 1.75;
+  --text-body: 1rem;
+  --text-body--line-height: 1.75;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.6;
+
+  --radius-card: 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ไม่ให้อะไรล้นจอแนวนอน */
+html,
+body {
+  overflow-x: clip;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
